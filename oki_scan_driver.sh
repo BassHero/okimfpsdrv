@@ -20,14 +20,14 @@
 	# https://www.oki.com/printing/download/okimfpsdrv_1.7-0_amd64_231225.deb
 	# but it don't works. It causes dependency's problems with python.
 	
-	echo "Installing driver..."
-	sudo dpkg -i okimfpsdrv_1.7-0_amd64_20230201.deb
-	
 	echo "Installing Python2..."
 	sudo apt install python2 -y
 	
 	echo "Installing Python3..."
 	sudo apt install python3
+	
+	echo "Installing driver..."
+	sudo dpkg -i okimfpsdrv_1.7-0_amd64_20230201.deb
 	
 	cd /usr/libexec/okimfpdrv
 	
