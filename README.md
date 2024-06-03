@@ -10,10 +10,12 @@ Step 2.
 	cd ~/Downloads
 
 Step 3.
-	(22.04) 
+	(22.04)
+ 
 	wget https://github.com/BassHero/okimfpsdrv/blob/main/oki_scan_driver.sh
 	
-	(24.04) 
+	(24.04)
+ 
 	wget https://raw.githubusercontent.com/BassHero/okimfpsdrv/main/oki_scan_driver_2404.sh
 
 Step 4.
