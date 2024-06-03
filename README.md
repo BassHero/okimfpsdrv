@@ -2,28 +2,32 @@
 
 Modified version of Oki Scanner Driver to works on Ubuntu 22.04 and 24.04 LTS and derivatives.
 
-Steps to install:
+## How to install
 
-Step 1. 
-Open a terminal window (Ctrl + Alt + T) and type the commands bellow:
-
-
-Step 2.
-`cd ~/Downloads`
+### 1. Open a terminal window (Ctrl + Alt + T) and type the commands bellow
 
 
-Step 3.
+
+
+        cd ~/Downloads
+
+
+### 2. Copy the command bellow corresponding to your Ubuntu version
 
 (22.04)
-`wget https://raw.githubusercontent.com/BassHero/okimfpsdrv/main/oki_scan_driver.sh`
-	
+
+        wget https://raw.githubusercontent.com/BassHero/okimfpsdrv/main/oki_scan_driver.sh
+
 (24.04)
-`wget https://raw.githubusercontent.com/BassHero/okimfpsdrv/main/oki_scan_driver_2404.sh`
+
+        wget https://raw.githubusercontent.com/BassHero/okimfpsdrv/main/oki_scan_driver_2404.sh
 
 
-Step 4.
-`chmod a+x oki_scan_driver*.sh`
+### 3. Give the script permission to run
+
+        chmod a+x oki_scan_driver*.sh
 
 
-Step 5.
-`./oki_scan_driver*.sh`
+### 4. Run the script
+
+        ./oki_scan_driver*.sh
