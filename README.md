@@ -7,8 +7,10 @@ Steps to install:
 Step 1. 
 Open a terminal window (Ctrl + Alt + T) and type the commands bellow:
 
+
 Step 2.
 `cd ~/Downloads`
+
 
 Step 3.
 
@@ -18,8 +20,10 @@ Step 3.
 (24.04)
 `wget https://raw.githubusercontent.com/BassHero/okimfpsdrv/main/oki_scan_driver_2404.sh`
 
+
 Step 4.
 `chmod a+x oki_scan_driver*.sh`
+
 
 Step 5.
 `./oki_scan_driver*.sh`
