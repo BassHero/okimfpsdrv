@@ -8,9 +8,10 @@ Step 1.
 Open a terminal window (Ctrl + Alt + T) and type the commands bellow:
 
 Step 2.
-`cd ~/Downloads
+`cd ~/Downloads`
 
 Step 3.
+
 (22.04)
 `wget https://github.com/BassHero/okimfpsdrv/blob/main/oki_scan_driver.sh`
 	
