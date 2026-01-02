@@ -27,59 +27,59 @@
 	cd python2
 
 	# python2 (2.7.18-3) [universe]
-	wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/python2_2.7.18-3_amd64.deb
+	PYTHON2=python2_2.7.18-3_amd64.deb
+	wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/$PYTHON2
 
 	# python2-minimal (= 2.7.18-3)
-	wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/python2-minimal_2.7.18-3_amd64.deb
+	PYTHON2_MINIMAL=python2-minimal_2.7.18-3_amd64.deb
+	wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/$PYTHON2_MINIMAL
 
 	# python2.7-minimal (>= 2.7.18~)
-	wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7-minimal_2.7.18-13ubuntu1.1_amd64.deb
+	PYTHON27_MINIMAL=python2.7-minimal_2.7.18-13ubuntu1.5_amd64.deb
+	wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/$PYTHON27_MINIMAL
 
 	# libpython2.7-minimal (= 2.7.18-13ubuntu1.1) [amd64, i386]
-	wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/libpython2.7-minimal_2.7.18-13ubuntu1.1_amd64.deb
+	LIBPYTHON27_MINIMAL=libpython2.7-minimal_2.7.18-13ubuntu1.5_amd64.deb
+	wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/$LIBPYTHON27_MINIMAL
 
 	# libpython2-stdlib (= 2.7.18-3)
-	wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/libpython2-stdlib_2.7.18-3_amd64.deb
+	LIBPYTHON2_STDLIB=libpython2-stdlib_2.7.18-3_amd64.deb
+	wget http://mirrors.kernel.org/ubuntu/pool/universe/p/python-defaults/$LIBPYTHON2_STDLIB
 
-	# libpython2.7-stdlib (>= 2.7.18~) 
-	wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/libpython2.7-stdlib_2.7.18-13ubuntu1.1_amd64.deb
+	# libpython2.7-stdlib (>= 2.7.18~)
+	LIBPYTHON27_STDLIB=libpython2.7-stdlib_2.7.18-13ubuntu1.5_amd64.deb
+	wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/$LIBPYTHON27_STDLIB
 
 	# python2.7 (>= 2.7.18~)
-	wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.18-13ubuntu1.1_amd64.deb
+	PYTHON27=python2.7_2.7.18-13ubuntu1.5_amd64.deb
+	wget http://security.ubuntu.com/ubuntu/pool/universe/p/python2.7/$PYTHON27
 
 
-	# 2. Packages Installation
+# 2. Packages Installation
 
 	# 2.1 Dependencies
-
 	sudo apt install libnsl2
 
-	# 2.1.1 python2-minimal and dependencies
-	sudo dpkg -i libpython2.7-minimal_2.7.18-13ubuntu1.1_amd64.deb python2.7-minimal_2.7.18-13ubuntu1.1_amd64.deb python2-minimal_2.7.18-3_amd64.deb
+		# 2.1.1 python2-minimal and dependencies
+		sudo dpkg -i $LIBPYTHON27_MINIMAL $PYTHON27_MINIMAL $PYTHON2_MINIMAL	
 
-	# 2.1.2 libpython2-stdlib and dependencies
-	sudo dpkg -i libpython2.7-stdlib_2.7.18-13ubuntu1.1_amd64.deb libpython2-stdlib_2.7.18-3_amd64.deb
+		# 2.1.2 libpython2-stdlib and dependencies
+		sudo dpkg -i $LIBPYTHON27_STDLIB $LIBPYTHON2_STDLIB	
 
-	# 2.1.3 python2.7 (>= 2.7.18~) dependency
-	sudo dpkg -i python2.7_2.7.18-13ubuntu1.1_amd64.deb
+		# 2.1.3 python2.7 (>= 2.7.18~) dependency
+		sudo dpkg -i $PYTHON27
 
-
-	# 2.1.4 And finally, python2
-	sudo dpkg -i python2_2.7.18-3_amd64.deb
-	
+		# 2.1.4 And finally, python2
+		sudo dpkg -i $PYTHON2	
 	
 	# 2.2.1 Installing Oki Scan Driver	
+		cd ~/Downloads/oki_scan_driver		
+		echo "Installing driver..."
+		sudo dpkg -i okimfpsdrv_1.7-0_amd64_20230201.deb	
+		cd /usr/libexec/okimfpdrv
 	
-	cd ~/Downloads/oki_scan_driver	
+	# 2.2.2 Add a PC to scanner	
+		echo "Starting Scanadm..."
+		python2 scanadm.py	
 	
-	echo "Installing driver..."
-	sudo dpkg -i okimfpsdrv_1.7-0_amd64_20230201.deb
-	
-	cd /usr/libexec/okimfpdrv
-	
-	# 2.2.2 Add a PC to scanner
-	echo "Starting Scanadm..."
-	python2 scanadm.py
-	
-	
-	echo "Installation Finished!"
+echo "Installation Finished!"
